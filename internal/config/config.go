@@ -24,6 +24,7 @@ type Config struct {
 	S3Host             string `mapstructure:"s3_host"`
 	SecretAccessKey    string `mapstructure:"secret_access_key"`
 	ServerName         string `mapstructure:"server_name"`
+	Size               int    `mapstructure:"size"`
 	Verbose            bool   `mapstructure:"verbose"`
 	ssl                bool
 }
