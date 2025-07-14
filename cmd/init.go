@@ -20,6 +20,7 @@ const (
 	FlagS3Host             = "s3-host"
 	FlagSecretAccessKey    = "secret-access-key"
 	FlagServerName         = "server-name"
+	FlagSize               = "size"
 	FlagVerbose            = "verbose"
 )
 
@@ -51,7 +52,10 @@ func init() {
 	getObjectCmd.Flags().StringP(FlagBucket, "b", "", "Bucket")
 	getObjectCmd.Flags().StringP(FlagKey, "k", "", "Key")
 
+	uploadRandomCmd.Flags().Int(FlagSize, 65536, "Size to upload")
+
 	rootCmd.AddCommand(getObjectCmd)
+	rootCmd.AddCommand(uploadRandomCmd)
 }
 
 // initConfig reads in Config file and ENV variables if set.
